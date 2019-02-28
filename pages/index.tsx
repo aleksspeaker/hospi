@@ -1,6 +1,6 @@
 import Layout from '../src/components/Layout';
 
-export default  () => (
+export default () => (
   <Layout title="Home | Next.js + TypeScript Example">
     <h1>Hospitality classes, inspiration, and tips in</h1>
     <p>We know which problems hoteliers face every day and we are ready to solve these problems</p>
