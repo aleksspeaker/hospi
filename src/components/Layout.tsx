@@ -15,10 +15,11 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
     </Head>
     <header>
       <nav>
-        <Link href='/'><a>Home</a></Link> | {' '}
-        <Link href='/list-class'><a>List Example</a></Link> | {' '}
-        <Link href='/list-fc'><a>List Example (as Functional Component)</a></Link> | {' '}
-        <Link href='/about'><a>About</a></Link> | {' '}
+        <Link href='/'><a>HOSPITALITY.HUB &#8482;</a></Link> | {' '}
+        <Link href='/market'><a>MARKET</a></Link> | {' '}
+        <Link href='/media'><a>MEDIA</a></Link> | {' '}
+        <Link href='/consulting'><a>CONSULTING</a></Link> | {' '}
+        <Link href='/for-companies'><a>FOR COMPANIES</a></Link> | {' '}
       </nav>
     </header>
     {children}
