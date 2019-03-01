@@ -1,0 +1,142 @@
+@import "../../../styles/variables";
+
+.Top-posts-screen {
+  height: calc(100vh - #{$HEADER_HEIGHT});
+  position: relative;
+
+  & .Top-posts-screen__illustration {
+    height: 100%;
+    position: absolute;
+    bottom: -40%;
+    pointer-events: none;
+  }
+
+  & .Screen-footer {
+    height: 20vh;
+    display: flex;
+    min-height: 140px;
+
+    &__open-hub {
+      width: 50%;
+      background: $ORANGE;
+      padding: 20px;
+      position: relative;
+
+      .Button-ellipse {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
+
+      small {
+        color: white;
+        opacity: .6;
+      }
+
+      span {
+        font-size: 16px;
+        color: $CARDS_BG;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 150px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+    }
+
+    &__open-posts {
+      width: 50%;
+      padding: 20px;
+      position: relative;
+      background: $BG_GRAY;
+
+      span {
+        font-size: $SMALL_FONT_SIZE;
+        color: $PALE_FONT;
+        display: inline-block;
+        width: 150px;
+        line-height: 18px;
+      }
+
+      p {
+        position: absolute;
+        bottom: 16px;
+        left: 20px;
+        margin: 0;
+        font-size: 40px;
+        vertical-align: center;
+        small {
+          position: absolute;
+          top: -10px;
+          right: -35px;
+          color: $ORANGE;
+        }
+      }
+
+      .Button-ellipse {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
+    }
+  }
+
+  &__text-content {
+    height: calc(80vh - #{$HEADER_HEIGHT});
+    overflow: hidden;
+    position: relative;
+  }
+
+  .Text-container {
+    width: 530px;
+    margin: 50px auto 0;
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+
+    &__slider-label {
+      display: inline-block;
+      margin: 0 auto 30px;
+      color: $PALE_FONT;
+      font-size: 13px;
+      text-transform: capitalize;
+      font-weight: 400;
+    }
+
+    .Posts-slider {
+      height: 80%;
+      min-height: 240px;
+      position: relative;
+
+      &__slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      h3 {
+        font-size: 40px;
+        font-weight: 500;
+        width: 250px;
+        margin: auto;
+      }
+
+      .Control-arrows {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    & .Author {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+}

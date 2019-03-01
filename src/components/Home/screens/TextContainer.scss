@@ -1,0 +1,65 @@
+@import "../../../styles/variables";
+
+.Text-container {
+  font-size: 15px;
+  font-weight: 500;
+  &__title {
+    font-size: $TITLE_FONT_SIZE;
+    line-height: $TITLE_LINE_HEIGHT;
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin: 0;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__intro {
+    color: $PALE_FONT;
+    margin: 50px 0;
+    line-height: 22px;
+
+    span {
+      display: block;
+    }
+  }
+
+  h3 {
+    span {
+      display: block;
+    }
+  }
+
+  &__scroll-tip {
+    color: $PALE_FONT;
+    display: inline-block;
+
+    & span {
+      &:nth-of-type(1) {
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        float: left;
+        /* padding: 0px; */
+        text-align: center;
+        background: #e6e6e6;
+        position: relative;
+        margin-right: 10px;
+
+        &::after {
+          // content: url("../../../../static/images/black-arrow.svg");
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+
+      &:nth-of-type(2) {
+        position: relative;
+        top: 4px;
+      }
+    }
+  }
+}

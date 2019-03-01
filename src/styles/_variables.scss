@@ -1,0 +1,59 @@
+/******************
+** App color scheme
+*******************/
+$BG_COLOR: #f3f3f3;
+$BORDER_COLOR: #dbdbdb;
+$BG_GRAY: #e6e6e6;
+$ORANGE: #ff6735;
+$CARDS_BG: #fff;
+$TEMPLATE_BORDER_COLOR: #2f2f2d;
+
+
+/*******************
+** Font parameters
+********************/
+
+$FONT_COLOR: #3c3c3c;
+$PALE_FONT: #818181;
+$TITLE_FONT_SIZE: 40px;
+$TITLE_LINE_HEIGHT: 41px;
+$SMALL_FONT_SIZE: 13px;
+$SMALL_LINE_HEIGHT: 20px;
+
+
+/********************
+** Layout parameters
+*********************/
+
+$HEADER_HEIGHT: 47px;
+
+
+/********************
+** Main page only
+*********************/
+
+$OFFSET: 250px;
+$VIDEO_HEIGHT: 250px;
+$TEMPLATES_INTRO_WIDTH: 43%;
+$UPPER_PART_HEIGHT: 40%;
+
+
+
+/******************
+** Mixins
+*******************/
+
+@mixin hoverFade {
+  &:hover {
+    span {
+      opacity: 0.5;
+    }
+  }
+}
+
+@mixin centeredAbsolutely {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}

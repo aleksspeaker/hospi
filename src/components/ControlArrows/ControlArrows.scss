@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.Control-arrows {
+
+  button {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    outline: none;
+    border: none;
+    position: relative;
+    margin-left: 15px;
+
+    &:hover {
+      background: #cdcdcd;
+    }
+
+    &::after {
+      // content: url("../../../static/images/arrow-right-dark.svg");
+      @include centeredAbsolutely();
+    }
+  }
+
+  &__left {
+      transform: rotate(180deg);
+
+  }
+
+  &__right {
+
+  }
+
+  &_gray {
+    button {
+      background: $BG_GRAY;
+    }
+  }
+
+}

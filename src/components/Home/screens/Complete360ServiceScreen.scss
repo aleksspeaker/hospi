@@ -1,0 +1,85 @@
+@import "../../../styles/variables";
+
+.Complete-service-screen {
+  height: calc(100vh - #{$HEADER_HEIGHT});
+  box-sizing: border-box;
+  padding: 50px 20px 30px 250px;
+  overflow: hidden;
+
+  &__illustration {
+    overflow: hidden;
+    height: calc(100% + 100px);
+    width: 350px;
+    position: absolute;
+    right: 20%;
+    bottom: 0;
+
+    img {
+      position: absolute;
+      top: -30px;
+    }
+  }
+
+  &__intro-controls {
+    height: $UPPER_PART_HEIGHT;
+    position: relative;
+    border-bottom: 1px solid $BORDER_COLOR;
+
+    h3 {
+      margin: 0;
+      font-size: $TITLE_FONT_SIZE;
+      line-height: $TITLE_LINE_HEIGHT;
+      letter-spacing: -1px;
+      font-weight: 500;
+
+      span {
+        display: block;
+      }
+    }
+
+    p {
+      margin-top: 20px;
+      color: $PALE_FONT;
+      line-height: $SMALL_LINE_HEIGHT;
+      font-size: $SMALL_FONT_SIZE;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    box-sizing: border-box;
+    padding: 50px 0;
+
+    .Control-bullet {
+      margin-right: 90px;
+    }
+  }
+
+  &__steps {
+    height: calc(100% - #{$UPPER_PART_HEIGHT});
+    padding: 90px 0;
+
+    section {
+      display: flex;
+      height: 60%;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      padding-right: 40px;
+
+      .Numerical-category {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% / 4);
+        margin: 0;
+      }
+    }
+
+    .Button-ellipse:nth-of-type(2) {
+      margin-left: 15px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../../styles/variables";
+
+.Intro-screen {
+  height: calc(100vh - #{$HEADER_HEIGHT});
+  position: relative;
+  box-sizing: border-box;
+
+  &__text-content {
+    height: calc(100% - #{$VIDEO_HEIGHT});
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 30px 30px $OFFSET;
+    position: relative;
+    min-height: 460px;
+
+    & .Button-ellipse {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      padding-right: 15px;
+    }
+  }
+
+  &__video-section {
+    height: $VIDEO_HEIGHT;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      object-fit: cover;
+    }
+  }
+}
