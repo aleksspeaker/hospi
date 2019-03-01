@@ -1,0 +1,66 @@
+@import "../../styles/variables";
+
+.Button-ellipse {
+  display: inline-block;
+  border-radius: 18px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 12px 17px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &_white {
+    background: #fff;
+    color: $FONT_COLOR;
+
+    &:hover {
+      background: #d7d7d7;
+    }
+  }
+
+  &_orange {
+    background: $ORANGE;
+    &:hover {
+      background: #ff8153;
+    }
+  }
+
+
+  &_gray {
+    background: $BG_GRAY;
+    font-weight: 600;
+    color: $FONT_COLOR;
+    &:hover {
+      background: #c6c7c5;
+    }
+
+    &_pale {
+      opacity: .8;
+      background-color: #bc4a24;
+      font-weight: 600;
+      color: white;
+      &:hover {
+        background: #e35a2b;
+      }
+    }
+  }
+
+  &.arrow-white {
+
+    &::after {
+      content: url("../../../assets/images/arrow-right-white.svg");
+      margin-left: 25px ;
+    }
+  }
+
+
+  &.arrow-dark {
+    &::after {
+      content: url("../../../assets/images/arrow-right-dark.svg");
+      margin-left: 25px;
+    }
+  }
+
+
+}

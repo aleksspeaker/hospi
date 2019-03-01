@@ -1,0 +1,265 @@
+@import "../../../styles/variables";
+
+// left offset from screen border
+$OFFSET : 250px;
+$VIDEO_HEIGHT : 250px;
+
+
+.First-screen {
+  height: calc(100vh - 47px);  // header height
+  position: relative;
+  box-sizing: border-box;
+
+  &__text-content {
+    height: calc(100% - 250px);  // container - video height
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 30px 30px $OFFSET;
+    position: relative;
+    min-height: 460px;
+
+    & .Button-ellipse {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      padding-right: 15px;
+    }
+
+  }
+
+  &__video-section {
+    height: $VIDEO_HEIGHT;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      object-fit: cover;
+    }
+  }
+
+}
+
+.Second-screen {
+  height: 100vh;
+  position: relative;
+  margin-top: $HEADER_HEIGHT;
+
+  &__text-content {
+    height: 55vh;  // container - video height
+    width: 100%;
+    box-sizing: border-box;
+    padding: 90px 30px 30px $OFFSET;
+    position: relative;
+    min-height: 460px;
+    & .Text-container__intro {
+      margin: 30px 0;
+    }
+  }
+}
+
+
+.Third-screen {
+  height: calc(100vh - 47px);
+  position: relative;
+
+  & .Third-screen__illustration {
+    height: 100%;
+    position: absolute;
+    bottom: -40%;
+    pointer-events: none;
+  }
+
+  & .Screen-footer {
+    height: 20vh;
+    display: flex;
+    min-height: 140px;
+
+    &__open-hub {
+      width: 50%;
+      background: $ORANGE;
+      padding: 20px;
+      position: relative;
+
+      .Button-ellipse {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
+
+      small {
+        color: white;
+        opacity: .6;
+      }
+
+      span {
+        font-size: 16px;
+        color: white;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 150px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+    }
+
+    &__open-posts {
+      width: 50%;
+      padding: 20px;
+      position: relative;
+      background: $BG_GRAY;
+
+      span {
+        font-size: 13px;
+        color: $PALE_FONT;
+        display: inline-block;
+        width: 150px;
+        line-height: 18px;
+      }
+
+      p {
+        position: absolute;
+        bottom: 16px;
+        left: 20px;
+        margin: 0;
+        font-size: 40px;
+        vertical-align: center;
+        small {
+          position: absolute;
+          top: -10px;
+          right: -35px;
+          color: $ORANGE;
+        }
+      }
+
+      .Button-ellipse {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
+    }
+  }
+
+  &__text-content {
+    height: calc(80vh - 47px);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .Text-container {
+    width: 530px;
+    margin: 50px auto 0;
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+
+    &__slider-label {
+      display: inline-block;
+      margin: 0 auto 30px;
+      color: $PALE_FONT;
+      font-size: 13px;
+      text-transform: capitalize;
+      font-weight: 400;
+    }
+
+    .Posts-slider {
+      height: 80%;
+      min-height: 240px;
+      position: relative;
+
+      &__slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      h3 {
+        font-size: 40px;
+        font-weight: 500;
+        width: 250px;
+        margin: auto;
+      }
+
+      .Control-arrows {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    & .Author {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+}
+
+// TODO move this block
+.Text-container {
+  font-size: 15px;
+  font-weight: 500;
+  &__title {
+    font-size: 2.8em;
+    line-height: 41px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin: 0;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__intro {
+    color: $PALE_FONT;
+    margin: 50px 0;
+    line-height: 22px;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__scroll-tip {
+    color: $PALE_FONT;
+    display: inline-block;
+
+    & span {
+      &:nth-of-type(1) {
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        float: left;
+        /* padding: 0px; */
+        text-align: center;
+        background: #e6e6e6;
+        position: relative;
+        margin-right: 10px;
+
+        &::after {
+          content:  url("../../../../assets/images/black-arrow.svg");
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+
+      &:nth-of-type(2) {
+        position: relative;
+        top: 4px;
+      }
+    }
+
+  }
+
+}
