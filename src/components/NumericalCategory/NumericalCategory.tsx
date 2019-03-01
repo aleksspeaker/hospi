@@ -1,5 +1,4 @@
 import React from 'react';
-// import "./NumericalCategory.scss";
 
 interface INumericalCategoryProps {
   amount: number;
@@ -9,11 +8,9 @@ interface INumericalCategoryProps {
 const NumericalCategory = (props: INumericalCategoryProps) => {
   const { amount, category } = props;
   return (
-    <>
-      <div className="Numerical-category">
-        <h3>{amount}</h3>
-        <small>{category}</small>
-      </div>
+    <div>
+      <h3>{amount}</h3>
+      <small>{category}</small>
       <style jsx>{`
         div {
           display: flex;
@@ -26,18 +23,12 @@ const NumericalCategory = (props: INumericalCategoryProps) => {
           margin: 0 15px 0 0;
         }
         small {
-          color: $PALE_FONT;
+          color: red;
           font-size: 14px;
           margin-top: 4px;
         }
-        .Numerical-categories {
-          display: flex;
-          position: absolute;
-          bottom: 30px;
-          font-weight: 500;
-        }
       `}</style>
-    </>
+    </div>
   );
 };
 
