@@ -31,9 +31,9 @@ export default (props: IProps) => {
   );
 
   return (
-    <section className="First-screen">
+    <section className="first-screen">
       <div className="text-content">
-        <div className="Text-container">
+        <div className="text-container">
           <h1 className="title">
             <span>Hospitality</span>
             <span>classes, inspiration,</span>
@@ -58,7 +58,7 @@ export default (props: IProps) => {
         />
       </div>
 
-      <div className="First-screen__video-section">
+      <div className="video-section">
         <img
           // tslint:disable-next-line:max-line-length
           src="https://res.cloudinary.com/dops-digital/image/upload/v1551182383/Hospitality%20Hub/placeholder_first_screen.png"
@@ -66,24 +66,41 @@ export default (props: IProps) => {
         />
       </div>
       <style jsx>{`
-        .First-screen {
-          height: calc(100vh - 47px); // header height
+        .first-screen {
+          height: calc(100vh - 47px);
           position: relative;
           box-sizing: border-box;
         }
         .text-content {
-          height: calc(100% - 250px); // container - video height
+          height: calc(100% - 250px);
           width: 100%;
           box-sizing: border-box;
-          padding: 50px 30px 30px $OFFSET;
+          padding: 50px 30px 30px 250px;
           position: relative;
           min-height: 460px;
         }
-        .Button-ellipse {
+        .text-content .Button-ellipse {
           position: absolute;
           right: 30px;
           bottom: 30px;
           padding-right: 15px;
+        }
+        .video-section {
+          height: 250px;
+          position: relative;
+        }
+        .video-section img {
+          width: 100%;
+          height: 100%;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          object-fit: cover;
+        }
+
+        .text-container {
+          font-size: 15px;
+          font-weight: 500;
         }
         .title {
           font-size: 2.8em;
@@ -96,7 +113,7 @@ export default (props: IProps) => {
           display: block;
         }
         .intro {
-          color: $PALE_FONT;
+          color: #333;
           margin: 50px 0;
           line-height: 22px;
         }
@@ -104,31 +121,29 @@ export default (props: IProps) => {
           display: block;
         }
         .scroll-tip {
-          color: $PALE_FONT;
+          color: #333;
           display: inline-block;
-          }
         }
-        .scroll-tip nth-of-type(2) {
+        .scroll-tip span:nth-of-type(1) {
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          float: left;
+          text-align: center;
+          background: #e6e6e6;
           position: relative;
-          top: 4px;
+          margin-right: 10px;
         }
-        .scroll-tip span :nth-of-type(1) {
-            border-radius: 50%;
-            width: 26px;
-            height: 26px;
-            float: left;
-            /* padding: 0px; */
-            text-align: center;
-            background: #e6e6e6;
-            position: relative;
-            margin-right: 10px;
-        }
-        .scroll-tip span :nth-of-type(1)::after {
-          content: url('../../../../assets/images/black-arrow.svg');
+        .scroll-tip span:nth-of-type(1)::after {
+          content: url('../../../static/images/black-arrow.svg');
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate3d(-50%, -50%, 0);
+        }
+        .scroll-tip span:nth-of-type(2) {
+          position: relative;
+          top: 4px;
         }
       `}</style>
     </section>

@@ -1,0 +1,27 @@
+// app color scheme
+$BG_COLOR : #F3F3F3;
+$BORDER_COLOR : #dbdbdb;
+$BG_GRAY : #e6e6e6;
+$ORANGE: #ff6735;
+
+$HEADER_HEIGHT : 47px;
+
+// text
+$FONT_COLOR : #3c3c3c;
+$PALE_FONT : #818181;
+
+
+@mixin hoverFade {
+  &:hover {
+    span {
+      opacity: .5;
+    }// page offset from screen border
+  }
+}
+
+@mixin centeredAbsolutely {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
