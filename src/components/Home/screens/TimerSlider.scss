@@ -1,0 +1,18 @@
+@import "../../../styles/variables";
+$OFFSET : 250px;
+
+.Timer-Slider {
+
+  .Control-bullet-container {
+    padding: 0 $OFFSET 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // container for card components
+  .Course-info-cards {
+    display: flex;
+  }
+}
+

@@ -12,7 +12,8 @@
   "dependencies": {
     "next": "^8.0.3",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-swipe": "^6.0.4"
   },
   "devDependencies": {
     "@types/jest": "^24.0.9",

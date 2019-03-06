@@ -26,7 +26,6 @@
     }
   }
 
-
   &_gray {
     background: $BG_GRAY;
     font-weight: 600;
@@ -54,13 +53,10 @@
     }
   }
 
-
   &.arrow-dark {
     &::after {
       content: url("../../../assets/images/arrow-right-dark.svg");
       margin-left: 25px;
     }
   }
-
-
 }

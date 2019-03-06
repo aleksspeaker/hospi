@@ -1,19 +1,10 @@
-@import '../styles/variables';
+@import './variables';
 
 body {
   margin: 0;
   background-color: $BG_COLOR;
   font-family: "Helvetica Neue Cyr", sans-serif;
   color: $FONT_COLOR;
-}
-
-
-@font-face {
-  font-family: "Helvetica Neue Cyr";
-  src: local("Helvetica Neue Cyr"), url("./../../assets/fonts/HELVETICANEUECYR-MEDIUM.TTF") format("truetype");
-  font-display: swap;
-  font-weight: 500;
-  font-style: normal;
 }
 
 li {
@@ -29,5 +20,3 @@ small {
   color: $PALE_FONT;
   font-size: 13px;
 }
-
-

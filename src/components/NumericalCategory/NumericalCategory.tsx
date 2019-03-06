@@ -1,8 +1,9 @@
 import React from 'react';
 
 interface INumericalCategoryProps {
-  amount: number;
+  amount: string;
   category: string;
+  withDot?: boolean;
 }
 
 const NumericalCategory = (props: INumericalCategoryProps) => {

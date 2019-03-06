@@ -1,0 +1,74 @@
+@import "../../../styles/variables";
+
+.Web-template-screen {
+  position: relative;
+  background: $BG_GRAY;
+  height: calc(100vh - #{$HEADER_HEIGHT});
+  display: flex;
+  flex-wrap: nowrap;
+
+  &__intro-text {
+    width: $TEMPLATES_INTRO_WIDTH;
+    background: white;
+    position: relative;
+
+    .Text-container {
+      @include centeredAbsolutely();
+      top: 40%;
+
+      text-align: center;
+      margin: auto;
+      width: 60%;
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
+
+      h3 {
+        font-size: $TITLE_FONT_SIZE;
+        line-height: $TITLE_LINE_HEIGHT;
+        margin: 0 auto 65px;
+        font-weight: 500;
+      }
+
+      &__to-shopping {
+        display: flex;
+        justify-content: space-between;
+
+        small {
+          color: $PALE_FONT;
+          font-size: $SMALL_FONT_SIZE;
+          font-weight: 400;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+
+  &__illustration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__slider-section {
+    height: 100%;
+    width: calc(100% - #{$TEMPLATES_INTRO_WIDTH});
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    padding: 100px 0;
+
+    .Control-arrows {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+      margin: 30px;
+    }
+
+    .Web-template-slider {
+      z-index: 1;
+    }
+  }
+}
