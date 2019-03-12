@@ -1,0 +1,22 @@
+@import './variables';
+
+body {
+  margin: 0;
+  background-color: $BG_COLOR;
+  font-family: "Helvetica Neue Cyr", sans-serif;
+  color: $FONT_COLOR;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $FONT_COLOR;
+}
+
+small {
+  color: $PALE_FONT;
+  font-size: 13px;
+}

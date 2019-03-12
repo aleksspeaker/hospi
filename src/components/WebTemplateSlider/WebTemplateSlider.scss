@@ -1,0 +1,25 @@
+.Web-template-slider {
+  display: flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-left: 100px;
+  box-sizing: border-box;
+  height: 100%;
+
+  &__slide-container {
+    display: inline;
+    width: 50% !important;
+  }
+
+  & .react-swipe-container {
+    height: 100% !important;
+    width: 100% !important;
+
+    div {
+      display: flex;
+      height: 100% !important;
+    }
+  }
+
+}

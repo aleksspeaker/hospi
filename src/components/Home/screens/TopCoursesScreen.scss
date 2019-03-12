@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.Top-courses-screen {
+  height: 100vh;
+  position: relative;
+  margin-top: $HEADER_HEIGHT;
+
+  &__text-content {
+    height: 55vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 90px 30px 30px $OFFSET;
+    position: relative;
+    min-height: 460px;
+    & .Text-container__intro {
+      margin: 30px 0;
+    }
+  }
+}
