@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .Button-ellipse {
   display: inline-block;
@@ -35,7 +35,7 @@
     }
 
     &_pale {
-      opacity: .8;
+      opacity: 0.8;
       background-color: #bc4a24;
       font-weight: 600;
       color: white;
@@ -45,17 +45,32 @@
     }
   }
 
-  &.arrow-white {
-
+  &.with-pdf {
+    position: relative;
+    padding-right: 80px;
     &::after {
-      content: url("../../../assets/images/arrow-right-white.svg");
-      margin-left: 25px ;
+      content: 'pdf';
+      text-transform: uppercase;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 6px 16px;
+      background: rgba(175, 81, 48, 0.72);
+      border-radius: 12px;
+    }
+  }
+
+  &.arrow-white {
+    &::after {
+      // content: url('../../../static/images/arrow-right-white.svg');
+      margin-left: 25px;
     }
   }
 
   &.arrow-dark {
     &::after {
-      content: url("../../../assets/images/arrow-right-dark.svg");
+      // content: url('../../../static/images/arrow-right-dark.svg');
       margin-left: 25px;
     }
   }

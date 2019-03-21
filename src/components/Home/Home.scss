@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.Main-page {
+  max-width: 100vw;
+
+  &::after {
+    content: url("https://res.cloudinary.com/dops-digital/image/upload/v1552556828/Hospitality%20Hub/landscape-plug.png");
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    background: $BG_COLOR;
+    display: none;
+    text-align: center;
+  }
+}
+
+@media screen
+and (min-height: #{$MOBILE_MIN_WIDTH})
+and (max-height: #{$MOBILE_MAX_WIDTH})
+and (orientation: landscape) {
+  .Header {
+    display: none;
+  }
+
+  .Main-page {
+    position: relative;
+
+    .Web-template-screen,
+    .Complete-service-screen,
+    .Intro-screen,
+    .Top-posts-screen,
+    .Top-courses-screen,
+    .Footer-basic {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,157 @@
+@import "../../../styles/variables";
+
+.Burger-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 300px 30px $OFFSET;
+  box-sizing: border-box;
+  background: $BG_COLOR;
+  width: 100%;
+  position: absolute;
+  top: $HEADER_HEIGHT;
+  left: 0;
+  z-index: auto;
+
+  &_closed {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &_opened {
+    visibility: visible;
+    pointer-events: all;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: calc(100vh - #{$HEADER_HEIGHT});
+      width: 100%;
+      z-index: -1;
+      background: rgba(20, 20, 20, 0.6);
+    }
+  }
+
+  &__upper-part {
+    padding-bottom: 30px;
+
+    .Burger-menu-items {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+
+      &__item {
+        font-size: $TITLE_FONT_SIZE;
+        line-height: $TITLE_LINE_HEIGHT;
+        margin-top: 20px;
+        font-weight: 500;
+        display: inline-block;
+        text-decoration: underline;
+        text-transform: capitalize;
+        cursor: pointer;
+        width: 300px;
+        @include hoverFadeSelf();
+
+        &_active {
+          text-decoration: none;
+
+          a {
+            color: $ORANGE;
+          }
+        }
+
+        &:nth-of-type(1) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  &__lower-part {
+    .Burger-menu-lower-items {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0 0;
+      margin: 0;
+      border-top: 1px solid $BORDER_COLOR;
+      &__item {
+        cursor: pointer;
+        font-size: $PARAGRAPH_FONT_SIZE;
+        text-decoration: underline;
+        @include hoverFadeSelf();
+
+        &_active {
+          text-decoration: none;
+
+          a {
+            color: $ORANGE;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Burger-menu {
+    width: 100vw;
+    height: calc(100vh - #{$HEADER_HEIGHT} + 2px);
+    padding: 30px;
+
+    &__upper-part {
+      width: 100%;
+      box-sizing: border-box;
+
+      .Burger-menu-items {
+        &__item {
+          font-size: 36px;
+          line-height: 37px;
+          margin-top: 12px;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__lower-part {
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      bottom: 50px;
+
+      & .Burger-menu-lower-items {
+        border-top: 0;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+
+        &__item {
+          font-size: 18px;
+          line-height: 30px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Burger-menu {
+    padding: 30px 70px 30px 80px;
+    &__upper-part {
+      .Burger-menu-items {
+        &__item {
+          font-size: $TITLE_TABLET_SIZE;
+          line-height: $TITLE_TABLET_HEIGHT;
+        }
+      }
+    }
+  }
+}

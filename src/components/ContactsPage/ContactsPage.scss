@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.Contacts-page {
+    height: 100vh;
+}
+
+@media screen
+and (min-height: #{$MOBILE_MIN_WIDTH})
+and (max-height: #{$MOBILE_MAX_WIDTH})
+and (orientation: landscape) {
+    .Contacts-page {
+        display: none;
+    }
+}

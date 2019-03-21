@@ -1,0 +1,197 @@
+@import '../../../styles/variables';
+
+.Contacts-form {
+    box-sizing: border-box;
+    min-width: 270px;
+
+    &__name,
+    &__mail {
+        margin-top: 50px;
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            line-height: 22px;
+            font-size: 20px;
+            font-weight: 500;
+            background: $BG_COLOR;
+            outline: none;
+            border: 0;
+            color: $FONT_COLOR;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $BORDER_COLOR;
+
+            &::placeholder {
+                color: $FONT_COLOR;
+            }
+        }
+    }
+
+    &__agree {
+        margin-top: 40px;
+        position: relative;
+        align-content: center;
+        color: $DARK_GRAY;
+
+        .terms-and-conditions {
+            color: $DARK_GRAY;
+            position: relative;
+            @include hoverBorderScale($DARK_GRAY);
+        }
+
+        input {
+            outline: none;
+            opacity: 1;
+            transform: translateY(-1px);
+            position: relative;
+
+            &:checked {
+                &::before {
+                    border: 1px solid $ORANGE;
+                }
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &::before {
+                content: ' ';
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                background: $BG_COLOR;
+                border: 1px solid $BORDER_COLOR;
+                border-radius: 50%;
+                opacity: 1;
+                pointer-events: none;
+            }
+
+            &::after {
+                content: ' ';
+                opacity: 0;
+                width: 6px;
+                height: 6px;
+                display: block;
+                background: $ORANGE;
+                pointer-events: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+            }
+        }
+
+        label {
+            margin-left: 14px;
+            margin-top: 8px;
+            display: inline-block;
+        }
+    }
+
+    &__comment {
+        margin-top: 40px;
+        position: relative;
+
+        label {
+            line-height: 22px;
+            font-size: 20px;
+            font-weight: 500;
+            position: absolute;
+            top: 18px;
+            z-index: 2;
+            left: 0;
+            transition: transform 0.5s linear;
+            transform: translateY(0);
+        }
+
+        textarea {
+            width: 100%;
+            line-height: 29px;
+            font-size: 20px;
+            font-weight: 400;
+            resize: none;
+            color: $FONT_COLOR;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            background: url('../../../../assets/images/form-rows.svg') repeat 0 -1px;
+            margin-top: 20px;
+
+            &:focus,
+            &:valid {
+                & ~ label {
+                    transition: transform 0.3s ease-in;
+                    transform: translateY(-100%);
+                }
+            }
+        }
+    }
+
+    &__agree-btn {
+        border: 0;
+        background: transparent;
+        outline: none;
+        margin-left: 20px;
+        a {
+            pointer-events: none;
+        }
+    }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait),
+screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: portrait) {
+    .Contacts-form {
+        padding: 0 30px 0 0;
+
+        &__name,
+        &__mail {
+            label,
+            input {
+                font-size: 16px;
+            }
+        }
+        &__comment {
+            label {
+                font-size: 16px;
+                line-height: 29px;
+            }
+
+            textarea {
+                font-size: 16px;
+                background: url('../../../../assets/images/form-rows.svg')
+                    repeat 0 -2px;
+            }
+        }
+
+        &__agree-btn {
+            margin-left: 0;
+            margin-top: 20px;
+            padding: 0;
+        }
+    }
+}
+
+@media screen
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: landscape) {
+    .Contacts-form {
+        &__agree-btn {
+            margin-top: 20px;
+            margin-left: 0;
+        }
+    }
+}
+
+
+//     padding: 30px 150px 20px 50px;

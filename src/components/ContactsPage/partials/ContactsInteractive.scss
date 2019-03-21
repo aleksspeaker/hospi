@@ -1,0 +1,192 @@
+@import '../../../styles/variables';
+
+.Contacts-interactive {
+    height: 70vh;
+    min-height: 500px;
+    background-color: $BG_COLOR;
+
+    &__form-area {
+        height: 100%;
+        float: left;
+        width: calc(100% / 2);
+        box-sizing: border-box;
+        padding: 30px 150px 20px $OFFSET;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p,
+        span {
+            margin: 0;
+            font-size: $SMALL_FONT_SIZE;
+            line-height: $SMALL_LINE_HEIGHT;
+            color: $DARK_GRAY;
+            display: block;
+        }
+    }
+
+    .Visit-office {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: calc(100% / 2);
+        float: right;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 70px 0 20px 50px;
+
+        &__title {
+            text-transform: capitalize;
+            margin: 0;
+            font-size: $TITLE_FONT_SIZE;
+            line-height: $TITLE_LINE_HEIGHT;
+            font-weight: 500;
+        }
+
+        &__secondary {
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+
+            small {
+                font-size: $SMALL_FONT_SIZE;
+                line-height: $SMALL_LINE_HEIGHT;
+                font-weight: 500;
+                width: 150px;
+                display: inline-block;
+            }
+
+            span {
+                margin-left: 6%;
+                display: block;
+                font-size: $PARAGRAPH_FONT_SIZE;
+                line-height: 20px;
+                @include hoverFadeSelf;
+            }
+        }
+
+        &__address {
+            margin-top: 100px;
+            line-height: 24px;
+            font-size: $PARAGRAPH_FONT_SIZE;
+
+            a {
+                width: 150px;
+                height: 48px;
+                display: block;
+                position: absolute;
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        &__map-view-btn {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-top: 100px;
+            img {
+                width: 36px;
+                height: 36px;
+            }
+
+            span {
+                font-size: 10px;
+                margin: 15px 10px;
+            }
+        }
+    }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+    .Contacts-interactive {
+        height: auto;
+        min-height: auto;
+
+        &__form-area {
+            height: auto;
+            float: none;
+            width: 100%;
+            padding: 0 0 0 $OFFSET_MOBILE;
+        }
+
+        .Visit-office {
+            width: 100%;
+            float: none;
+            padding: 50px 30px 20px 50px;
+
+            &__title {
+                font-size: $TITLE_MOBILE_SIZE;
+                line-height: $TITLE_MOBILE_HEIGHT;
+            }
+
+            &__secondary {
+                margin-top: 20px;
+                flex-direction: column;
+
+                span {
+                    margin: 30px 0 0;
+                }
+            }
+
+            &__address {
+                margin-top: 30px;
+            }
+
+            &__map-view-btn {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: portrait) {
+    .Contacts-interactive {
+        &__form-area {
+            padding: 70px $OFFSET_TABLET 30px;
+        }
+
+        .Visit-office {
+            &__title {
+                font-size: $TITLE_TABLET_SIZE;
+                line-height: $TITLE_TABLET_HEIGHT;
+            }
+
+            &__secondary {
+                margin-top: 20px;
+                flex-direction: column;
+
+                span {
+                    margin: 30px 0 0;
+                }
+            }
+
+            &__address {
+                margin-top: 30px;
+            }
+
+            &__map-view-btn {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media screen
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: landscape) {
+    .Contacts-interactive {
+        &__form-area {
+            padding: 70px $OFFSET_TABLET 30px;
+        }
+    }
+}
+

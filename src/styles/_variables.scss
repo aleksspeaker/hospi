@@ -7,8 +7,7 @@ $BG_GRAY: #e6e6e6;
 $ORANGE: #ff6735;
 $CARDS_BG: #fff;
 $TEMPLATE_BORDER_COLOR: #2f2f2d;
-
-
+$DARK_GRAY: #818181;
 /*******************
 ** Font parameters
 ********************/
@@ -17,43 +16,124 @@ $FONT_COLOR: #3c3c3c;
 $PALE_FONT: #818181;
 $TITLE_FONT_SIZE: 40px;
 $TITLE_LINE_HEIGHT: 41px;
+$PARAGRAPH_FONT_SIZE: 16px;
 $SMALL_FONT_SIZE: 13px;
 $SMALL_LINE_HEIGHT: 20px;
 
+/*******************
+** Fonts adaptive
+********************/
+
+$TITLE_MOBILE_SIZE: 30px;
+$TITLE_MOBILE_HEIGHT: 31px;
+$TITLE_LAPTOP_SIZE: 35px;
+$TITLE_LAPTOP_HEIGHT: 36px;
+$TITLE_TABLET_SIZE: 33px;
+$TITLE_TABLET_HEIGHT: 34px;
 
 /********************
 ** Layout parameters
 *********************/
 
 $HEADER_HEIGHT: 47px;
-
+$OFFSET: 250px;
+$OFFSET_MOBILE: 50px;
+$OFFSET_TABLET: 80px;
 
 /********************
 ** Main page only
 *********************/
 
-$OFFSET: 250px;
 $VIDEO_HEIGHT: 250px;
+$VIDEO_MOB_HEIGHT: 120px;
 $TEMPLATES_INTRO_WIDTH: 43%;
 $UPPER_PART_HEIGHT: 40%;
 
+/******************
+** Mobile layout
+*******************/
 
+$MOBILE_MIN_WIDTH: 320px;
+$MOBILE_WIDTH: 360px;
+$MOBILE_MAX_WIDTH: 500px;
+
+/************************
+** Adaptive breakpoints
+*************************/
+
+$LAPTOP_MAX_WIDTH: 1330px;
+$LAPTOP_MIN_WIDTH: 1250px;
+
+$TABLET_MAX_WIDTH: 1249px;
+$TABLET_MIN_WIDTH: 600px;
 
 /******************
 ** Mixins
 *******************/
 
 @mixin hoverFade {
-  &:hover {
-    span {
-      opacity: 0.5;
+    &:hover {
+        span {
+            opacity: 0.5;
+        }
     }
-  }
 }
 
 @mixin centeredAbsolutely {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin fadeUnderline {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin hoverFadeSelf {
+    &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+    }
+    &.Open-menu-items__item_active {
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin hoverBorderScale($borderColor) {
+    &::after {
+        content: '';
+        height: 1px;
+        width: 100%;
+        background: $borderColor;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        transition: transform 0.3s ease-out;
+        transform-origin: 0 100%;
+        transform: scaleX(1);
+    }
+
+    &:hover {
+        &::after {
+            transform: scaleX(0);
+            transform-origin: 0 100%;
+            transition: transform 0.3s ease-out;
+        }
+    }
+}
+
+/******************
+** Animations
+*******************/
+
+@keyframes timeoutOrange {
+    100% {
+        stroke-dasharray: 150;
+        stroke-dashoffset: 150;
+    }
 }

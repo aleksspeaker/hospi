@@ -1,0 +1,241 @@
+@import "../../styles/variables";
+
+.Footer-basic {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  border-top: 1px solid $BORDER_COLOR;
+
+  &__upper-block {
+    box-sizing: border-box;
+    padding: 20px 0 75px;
+    border-bottom: 1px solid $BORDER_COLOR;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Newsletter-sign-up {
+    h4 {
+      font-size: $TITLE_FONT_SIZE;
+      line-height: $TITLE_LINE_HEIGHT;
+      font-weight: 500;
+      margin: 0 0 70px;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .Newsletter-form {
+    input {
+      line-height: 36px;
+      border: none;
+      font-size: $SMALL_FONT_SIZE;
+      box-sizing: border-box;
+      padding: 0 18px;
+      color: $PALE_FONT;
+      background-color: $BG_GRAY;
+      outline: none;
+      width: 300px;
+    }
+
+    &__submit {
+      padding: 0;
+      border: none;
+      background: transparent;
+      outline: none;
+      margin-left: 22px;
+    }
+  }
+
+  &__lower-block {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 0 0;
+    color: $PALE_FONT;
+    font-size: $SMALL_FONT_SIZE;
+
+    span {
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    a {
+      color: $PALE_FONT;
+      font-size: $SMALL_FONT_SIZE;
+      padding: 10px 0;
+      box-sizing: border-box;
+      display: inline-block;
+      text-decoration: underline $PALE_FONT;
+      @include fadeUnderline();
+
+      &:nth-last-of-type(1) {
+        margin-left: 6px;
+      }
+    }
+
+    div {
+      a:nth-of-type(2) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .Footer-links {
+    display: flex;
+    flex: 1;
+    margin-left: 80px;
+
+    &__list {
+      position: relative;
+      flex: 0.25;
+      margin-left: 20px;
+
+      &:nth-of-type(1) {
+        margin-left: 0;
+      }
+
+      b {
+        font-size: $PARAGRAPH_FONT_SIZE;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 50px;
+        display: block;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin: 10px 0;
+          opacity: 1;
+          @include hoverFade();
+
+          a {
+            color: $PALE_FONT;
+            font-size: $SMALL_FONT_SIZE;
+            line-height: $SMALL_LINE_HEIGHT;
+            text-transform: capitalize;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Footer-basic {
+    height: auto;
+    padding: $OFFSET_MOBILE $OFFSET_MOBILE 20px;
+
+    &__upper-block {
+      padding: 0;
+
+      .Newsletter-sign-up {
+        h4,
+        h4 span {
+          font-size: $TITLE_MOBILE_SIZE;
+          line-height: $TITLE_MOBILE_HEIGHT;
+          margin: 0;
+        }
+
+        .Newsletter-form {
+          input {
+            margin-top: 30px;
+            width: 100%;
+          }
+
+          &__submit {
+            margin-top: 30px;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .Footer-links {
+      margin: 0;
+      &__list {
+        display: none;
+        &:nth-last-of-type(1) {
+          display: block;
+          padding-top: 18px;
+          padding-bottom: 10px;
+          margin: 0;
+          flex: 1;
+
+          b {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__lower-block {
+      div {
+        display: none;
+      }
+
+      span,
+      small,
+      a {
+        font-size: 10px;
+        padding: 0;
+      }
+
+      span {
+        width: 50%;
+      }
+
+      small {
+        width: 50%;
+        text-align: right;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Footer-basic {
+    &__upper-block {
+      .Newsletter-sign-up {
+        h4 {
+          font-size: $TITLE_TABLET_SIZE;
+          line-height: $TITLE_TABLET_HEIGHT;
+          margin: 0 0 36px;
+        }
+      }
+
+      .Footer-links {
+        margin: 40px 0 0;
+        &__list {
+          &:nth-of-type(1) {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+
+    &__lower-block {
+      div {
+        display: none;
+      }
+
+      small {
+        top: 4px;
+        position: relative;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./ButtonEllipse.scss";
 
 const ButtonEllipse = (props) => {
    const { text, classes, routeTo } = props;

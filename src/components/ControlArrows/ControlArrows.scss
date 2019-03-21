@@ -1,7 +1,6 @@
 @import "../../styles/variables";
 
 .Control-arrows {
-
   button {
     border-radius: 50%;
     width: 36px;
@@ -22,12 +21,7 @@
   }
 
   &__left {
-      transform: rotate(180deg);
-
-  }
-
-  &__right {
-
+    transform: rotate(180deg);
   }
 
   &_gray {
@@ -35,5 +29,4 @@
       background: $BG_GRAY;
     }
   }
-
 }

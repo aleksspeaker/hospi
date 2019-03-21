@@ -3,73 +3,103 @@
 $ARTICLE_PADDING: 18px;
 
 .Course-info-card {
-  min-height: 340px;
-  max-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  box-sizing: border-box;
-  border-right: 1px solid $BORDER_COLOR;
-
-  &__illustration {
-    width: 100%;
-    object-fit: cover;
-    height: calc(100% - 120px);
-  }
-
-  &__description {
-    position: relative;
-    width: 100%;
-    min-height: 120px;
-    height: 120px;
+    min-height: 340px;
+    max-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     box-sizing: border-box;
-    padding: $ARTICLE_PADDING;
-    vertical-align: bottom;
-    background: white;
+    border-right: 1px solid $BORDER_COLOR;
 
-    small {
-      color: $PALE_FONT;
-      text-transform: capitalize;
-
-      &::after {
-        content: '';
-        display: inline-block;
-        float: left;
-        clear: both;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        vertical-align: center;
-        background: $ORANGE;
-        margin: 3px 7px 0 0;
-      }
+    &_active {
+        transform: translateX(0);
+        transition: transform 0.4s linear;
+        &__illustration {
+            min-width: 100%;
+            object-fit: cover;
+            height: calc(100% - 120px);
+            overflow: hidden;
+        }
     }
 
-    h5 {
-      color: $FONT_COLOR;
-      margin: 0;
-      font-weight: 500;
-      font-size: 16px;
-      max-width: 48%;
-      line-height: 22px;
-      position: absolute;
-      bottom: $ARTICLE_PADDING;
-      text-transform: capitalize;
+    &__illustration {
+        min-width: 100%;
+        object-fit: cover;
+        height: calc(100% - 120px);
+        overflow: hidden;
     }
 
-    span {
-      color: $PALE_FONT;
-      position: absolute;
-      bottom: $ARTICLE_PADDING;
-      right: $ARTICLE_PADDING;
-      font-size: 13px;
+    &__description {
+        position: relative;
+        width: 100%;
+        min-height: 120px;
+        height: 120px;
+        box-sizing: border-box;
+        padding: $ARTICLE_PADDING;
+        vertical-align: bottom;
+        background: white;
+
+        small {
+            color: $PALE_FONT;
+            text-transform: capitalize;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                float: left;
+                clear: both;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                vertical-align: center;
+                background: $ORANGE;
+                margin: 3px 7px 0 0;
+            }
+        }
+
+        h5 {
+            color: $FONT_COLOR;
+            margin: 0;
+            font-weight: 500;
+            font-size: 16px;
+            max-width: 48%;
+            line-height: 22px;
+            position: absolute;
+            bottom: $ARTICLE_PADDING;
+            text-transform: capitalize;
+        }
+
+        span {
+            color: $PALE_FONT;
+            position: absolute;
+            bottom: $ARTICLE_PADDING;
+            right: $ARTICLE_PADDING;
+            font-size: 13px;
+        }
     }
 
-  }
-
-
-  &_third {
-    width: 33.32%;
-  }
+    &_third {
+        width: 33.32%;
+    }
 }
 
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+    .Course-info-card {
+        &__description {
+            h5 {
+                font-size: 13px;
+                line-height: 20px;
+                max-width: 70%;
+            }
+
+            small {
+                &::after {
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+}
