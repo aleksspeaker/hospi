@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from "react";
 
 import "./BurgerMenu.scss";
@@ -5,6 +6,7 @@ import "./BurgerMenu.scss";
 interface IItem {
   id: string;
   itemName: string;
+  slug: string;
 }
 
 const BurgerMenu = ({ stateObj, clickHandler }) => {
@@ -38,7 +40,7 @@ const BurgerMenu = ({ stateObj, clickHandler }) => {
                   clickHandler(e, item);
                 }}
               >
-                <a href="/">{item.itemName}</a>
+                <Link href={`/${item.slug}`}><span>{item.itemName}</span></Link>
               </li>
             );
           })}
@@ -59,7 +61,7 @@ const BurgerMenu = ({ stateObj, clickHandler }) => {
                   clickHandler(e, item);
                 }}
               >
-                <a href="/">{item.itemName}</a>
+                <Link href={`/${item.slug}`}><span>{item.itemName}</span></Link>
               </li>
             );
           })}

@@ -17,6 +17,7 @@ interface ITimerSliderState {
   categories: any[];
   currentCategory: number;
 }
+
 const categories = [{ 0: 'marketing' }, { 1: 'media' }, { 2: 'management' }, { 3: 'planning' }];
 
 const mockResponse = {

@@ -128,97 +128,56 @@ const headerState = {
     {
       id: 0,
       itemName: 'Home',
+      slug: '',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'Programs',
+      slug: 'programs',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'Media',
+      slug: 'media',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'Store',
+      slug: 'store',
     },
   ],
   openMenuLowerItems: [
     {
       id: generateUniqueIndex(),
       itemName: 'Consulting',
+      slug: 'consulting',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'For Companies',
+      slug: 'for-companies',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'Contacts',
+      slug: 'contacts',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'Jobs',
+      slug: 'jobs',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'Partnerships',
+      slug: 'partnerships',
     },
     {
       id: generateUniqueIndex(),
       itemName: 'Our Story',
+      slug: 'our-story',
     },
   ],
 };
 
 export default Header;
-
-const old = () => (
-  <header className="Header">
-    <button className="Header__menu-btn">
-      <span>Menu</span>
-    </button>
-    <nav className="Navigation-Logo">
-      <div className="Navigation-Logo__logo">
-        <Link href="/">
-          <a>HOSPITALITY.HUB &#8482;</a>
-        </Link>{' '}
-        |{' '}
-      </div>
-      <ul className="Navigation-Logo__items Navigation-items">
-        <li className="Navigation-items__nav-item">
-          <Link href="/market">
-            <a>MARKET</a>
-          </Link>{' '}
-          |{' '}
-        </li>
-        <li className="Navigation-items__nav-item">
-          <Link href="/media">
-            <a>MEDIA</a>
-          </Link>{' '}
-          |{' '}
-        </li>
-        <li className="Navigation-items__nav-item">
-          <Link href="/consulting">
-            <a>CONSULTING</a>
-          </Link>{' '}
-          |{' '}
-        </li>
-        <li className="Navigation-items__nav-item">
-          <Link href="/for-companies">
-            <a>FOR COMPANIES</a>
-          </Link>{' '}
-          |{' '}
-        </li>
-      </ul>
-    </nav>
-    <section className="Header__programs-user Program-User">
-      <div className="Program-User__programs-btn">
-        <span>ALL PROGRAMS</span>
-      </div>
-      <div className="Program-User__favrts-profile">
-        <button>F</button>
-        <button>P</button>
-      </div>
-    </section>
-  </header>
-);
