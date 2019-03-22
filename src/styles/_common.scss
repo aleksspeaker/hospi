@@ -1,25 +1,31 @@
-@import './variables';
+@import '../styles/variables';
 
 body {
-  margin: 0;
   background-color: $BG_COLOR;
-  font-family: "Helvetica Neue Cyr", sans-serif;
   color: $FONT_COLOR;
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  margin: 0;
 }
 
+@font-face {
+  font-display: swap;
+  font-family: 'Helvetica Neue Cyr';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Helvetica Neue Cyr'),
+    url('../../static/fonts/HELVETICANEUECYR-MEDIUM.TTF') format('truetype');
+}
 
 li {
   list-style-type: none;
 }
 
 a {
-  text-decoration: none;
   color: $FONT_COLOR;
+  text-decoration: none;
 }
 
 small {
   color: $PALE_FONT;
   font-size: 13px;
 }
-
-
