@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import plusIcon from './../../../static/images/plus-dark.svg';
+import plusIcon from './../../../static/images/plus-dark.svg';
 import { BulletProgress } from './BulletProgress';
 import './ControlBullet.scss';
 
@@ -29,9 +29,7 @@ class ControlBullet extends Component<IControlBulletProps> {
       >
         <div className="Control-bullet__bullet">
           <BulletProgress />
-          // FIXME: import this icon
-          {/* <img src={plusIcon} alt="control" /> */}
-          <img src={''} alt="control" />
+          <img src={plusIcon} alt="control" />
         </div>
 
         <div className="Control-bullet__text-content">

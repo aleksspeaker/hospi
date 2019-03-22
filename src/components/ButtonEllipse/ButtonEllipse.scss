@@ -63,14 +63,14 @@
 
   &.arrow-white {
     &::after {
-      // content: url('../../../static/images/arrow-right-white.svg');
+      content: url('../../../static/images/arrow-right-white.svg');
       margin-left: 25px;
     }
   }
 
   &.arrow-dark {
     &::after {
-      // content: url('../../../static/images/arrow-right-dark.svg');
+      content: url('../../../static/images/arrow-right-dark.svg');
       margin-left: 25px;
     }
   }

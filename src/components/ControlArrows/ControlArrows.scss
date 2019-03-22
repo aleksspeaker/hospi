@@ -15,7 +15,7 @@
     }
 
     &::after {
-      // content: url("../../../static/images/arrow-right-dark.svg");
+      content: url("../../../static/images/arrow-right-dark.svg");
       @include centeredAbsolutely();
     }
   }

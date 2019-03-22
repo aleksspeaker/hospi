@@ -1,4 +1,5 @@
 import React from 'react';
+import "./NumericalCategory.scss";
 
 interface INumericalCategoryProps {
   amount: string;

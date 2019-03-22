@@ -25,7 +25,7 @@ export const IntroScreen = ({ subscribers, videos, programs }) => {
           </div>
 
           <section className="Numerical-categories">
-            <NumericalCategory amount={subscribers} category="subscribers"/>
+            <NumericalCategory amount={subscribers} category="subscribers" />
             <NumericalCategory amount={videos} category="videos" />
             <NumericalCategory amount={programs} category="programs" />
           </section>

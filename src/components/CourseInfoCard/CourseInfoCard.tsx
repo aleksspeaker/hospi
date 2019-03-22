@@ -5,10 +5,10 @@ import './CourseInfoCard.scss';
 interface ICourseInfoCardProps {
   imageURL: string;
   courseName: string;
-  complexityLevel: number;
-  classes?: string[];
+  complexityLevel: string;
+  classes?: string;
   price: number;
-  isActive: boolean;
+  isActive?: boolean;
 }
 
 class CourseInfoCard extends Component<ICourseInfoCardProps> {

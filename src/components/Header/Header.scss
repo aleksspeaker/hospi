@@ -4,13 +4,14 @@
   width: 100%;
   height: 46px;
   border-bottom: 1px solid $BORDER_COLOR;
-  position: sticky;
+  position: fixed;
   display: flex;
   top: 0;
   left: 0;
   font-size: 11px;
   z-index: 10;
   background: $BG_COLOR;
+  transform: translate3d(0,0,0);
 
   .Header__menu-btn {
     width: 160px;
@@ -28,8 +29,18 @@
     color: $FONT_COLOR;
     outline: none;
 
+    img {
+      height: 12px;
+      position: relative;
+      top: 2px;
+    }
+
+    span {
+      margin-left: 12px;
+    }
+
     &::after {
-      content: '';
+      content: "";
       height: 75%;
       width: 1px;
       background: $BORDER_COLOR;
@@ -38,8 +49,7 @@
       top: 0;
     }
 
-   @include hoverFade();
-
+    @include hoverFade();
   }
 
   .Header__programs-user.Program-User {
@@ -48,7 +58,7 @@
     position: absolute;
 
     &::before {
-      content: '';
+      content: "";
       height: 75%;
       width: 1px;
       background: $BORDER_COLOR;
@@ -65,7 +75,7 @@
       position: relative;
       cursor: pointer;
       &::after {
-        content: '';
+        content: "";
         margin-left: 10px;
         border-radius: 50%;
         width: 26px;
@@ -76,15 +86,14 @@
       }
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
-        right: 29px;
+        right: 28px;
         top: 22px;
         width: 0;
         height: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-
         border-top: 4px solid #646464;
       }
     }
@@ -94,15 +103,23 @@
       height: 100%;
       margin-right: 20px;
 
-      & button {
-        height: 100%;
-        width: 40px;
-        border: none;
-        padding: 0 10px;
-        cursor: pointer;
-        background: transparent;
-        &:hover {
-          opacity: .5;
+      .Wishlist-login {
+        &__login,
+        &__wishlist {
+          height: 100%;
+          width: 40px;
+          border: none;
+          padding: 0 10px;
+          cursor: pointer;
+          background: transparent;
+
+          img {
+            height: 18px;
+          }
+
+          &:hover {
+            opacity: 0.5;
+          }
         }
       }
     }
@@ -116,6 +133,25 @@
   float: left;
   margin: 0 100px;
 
+  &__logo {
+    position: relative;
+    width: 100px;
+
+    img {
+      position: absolute;
+      width: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+
   .Navigation-items {
     display: flex;
     height: 100%;
@@ -126,7 +162,103 @@
       padding: 17px 45px;
       text-align: center;
       cursor: pointer;
+      text-transform: uppercase;
       @include hoverFade();
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Header {
+    width: 100vw;
+
+    .Header__menu-btn {
+      width: 47px;
+
+      &::after {
+        display: none;
+      }
+
+      img {
+        top: 0;
+        height: 14px;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .Program-User {
+      &::before {
+        display: none;
+      }
+      & .Wishlist-login {
+        margin-right: 0 !important;
+      }
+      &__programs-btn {
+        display: none;
+      }
+    }
+  }
+
+  .Navigation-Logo {
+    .Navigation-items {
+      display: none;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$LAPTOP_MIN_WIDTH})
+and (max-width: #{$LAPTOP_MAX_WIDTH}) {
+  .Header {
+    .Navigation-Logo {
+      margin: 0 60px;
+
+      .Navigation-items {
+        padding-left: 30px;
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Header {
+    width: 100vw;
+
+    & .Program-User {
+        &__programs-btn {
+          display: none;
+        }
+
+      &__favrts-profile.Wishlist-login {
+        margin-right: 0 !important;
+      }
+    }
+
+    .Navigation-Logo {
+      margin: 0 40px;
+
+      .Navigation-items {
+        padding-left: 60px;
+
+        &__nav-item {
+          padding: 20px 15px;
+        }
+      }
+    }
+
+    .Header__menu-btn {
+      width: 50px;
+      span {
+        display: none;
+      }
     }
   }
 }

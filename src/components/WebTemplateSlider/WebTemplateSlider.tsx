@@ -23,9 +23,9 @@ export const WebTemplateSlider = ({ responseObj }) => {
       />
 
       <ReactSwipe ref={(el: any) => (ReactSwipeElm = el)}>
-        {responseObj.map((templateItem: ITemplateItem) => {
+        {responseObj.map((templateItem: ITemplateItem, id: number) => {
           return (
-            <span className={"Web-template-slider__slide-container"}>
+            <span key={id} className={"Web-template-slider__slide-container"}>
               <WebTemplateCard
                 templateName={templateItem.templateName}
                 templatePrice={templateItem.templatePrice}
