@@ -7,9 +7,7 @@ interface IControlBulletProps {
   amount: number;
   category: string;
   isActive?: boolean;
-  // FIXME: fix type
-  clicked?: any;
-  // clicked?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
+  clicked?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 class ControlBullet extends Component<IControlBulletProps> {
