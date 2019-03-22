@@ -4,13 +4,41 @@
   display: flex;
   flex-wrap: nowrap;
   margin-right: 40px;
+  cursor: pointer;
+
+  &_active {
+    & .Control-bullet__bullet {
+      background-color: $BG_COLOR;
+      border: 1px solid $BORDER_COLOR;
+      transition: background-color 0.3s ease-out;
+
+      & img {
+        transform: translate3d(-50%, -50%, 0) rotate(45deg);
+        transition: transform 0.4s linear;
+      }
+    }
+
+    & .Control-bullet__progress {
+      animation: timeoutOrange 8s linear forwards;
+    }
+  }
+
+  &:hover {
+    & .Control-bullet__bullet {
+      &::before {
+        transition: transform 0.3s ease-out;
+        transform: translateY(0);
+      }
+    }
+  }
 
   &__progress {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
     @include centeredAbsolutely();
-
-    stroke-dasharray: 100;
+    overflow: visible;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 0;
   }
 
   &__bullet {
@@ -20,10 +48,24 @@
     float: left;
     clear: both;
     background-color: $BG_GRAY;
+    transition: background-color 0.3s ease-out;
     border-radius: 50%;
+    overflow: hidden;
 
     & img {
       @include centeredAbsolutely();
+    }
+
+    &::before {
+      content: "";
+      width: 38px;
+      height: 38px;
+      background: $ORANGE;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 0.3s ease-out;
+      transform: translateY(100%);
     }
   }
 
@@ -44,15 +86,17 @@
       line-height: 32px;
     }
   }
+}
 
-  &.clicked {
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Control-bullet {
     &__bullet {
-      background: transparent;
-    }
-
-    &__progress {
-      // animate dasharray
+      &::before {
+        display: none;
+      }
     }
   }
-
 }
