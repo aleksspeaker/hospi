@@ -176,6 +176,7 @@ class TimerSlider extends Component<ITimerSliderProps, ITimerSliderState> {
       categories,
       currentCategory: 0,
     };
+    this.updateCategoryOnTimer = this.updateCategoryOnTimer.bind(this);
   }
 
   public componentDidMount() {

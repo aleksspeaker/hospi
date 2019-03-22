@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ButtonEllipse from "../../ButtonEllipse/ButtonEllipse";
-import TimerSlider from "./TimerSlider";
+import TimerSlider from "../../TimerSlider/TimerSlider";
 
 import './TextContainer.scss';
 import './TopCoursesScreen.scss';
