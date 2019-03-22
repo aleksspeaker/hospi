@@ -1,26 +1,51 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .Numerical-category {
-    display: flex;
-    justify-content: flex-start;
-    margin-right: 100px;
-    h3 {
-      font-size: 2.8em;
-      font-weight: 500;
-      margin: 0 15px 0 0;
-
-    }
-    small {
-      color: $PALE_FONT;
-      font-size: 14px;
-      margin-top: 4px;
-    }
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 100px;
+  h3 {
+    font-size: $TITLE_FONT_SIZE;
+    font-weight: 500;
+    margin: 0;
+  }
+  small {
+    color: $PALE_FONT;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-left: 15px;
+  }
 }
 
-// TODO recompose this
 .Numerical-categories {
   display: flex;
   position: absolute;
   bottom: 30px;
   font-weight: 500;
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Numerical-category {
+    h3 {
+      font-size: $TITLE_MOBILE_SIZE;
+      line-height: $TITLE_MOBILE_HEIGHT;
+    }
+    small {
+      margin: 2px 0 0 8px;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Numerical-category {
+    h3 {
+      font-size: $TITLE_TABLET_SIZE;
+      line-height: $TITLE_TABLET_HEIGHT;
+    }
+  }
 }

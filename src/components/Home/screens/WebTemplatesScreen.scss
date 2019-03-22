@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .Web-template-screen {
   position: relative;
@@ -41,6 +41,10 @@
           font-weight: 400;
           margin-top: 16px;
         }
+
+        .Button-ellipse {
+          height: 11px;
+        }
       }
     }
   }
@@ -72,3 +76,125 @@
     }
   }
 }
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Web-template-screen {
+    height: auto;
+    flex-direction: column;
+
+    &__illustration {
+      height: 50%;
+    }
+
+    &__intro-text {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+
+      .Text-container {
+        width: 80%;
+        height: 80%;
+        top: 50%;
+
+        &__to-shopping {
+          small {
+            display: none;
+          }
+        }
+
+        .Button-ellipse_orange {
+          margin: auto;
+        }
+
+        h3 {
+          margin: 50px auto 30px;
+        }
+
+        h3,
+        h3 span {
+          font-size: $TITLE_MOBILE_SIZE;
+          line-height: $TITLE_MOBILE_HEIGHT;
+        }
+      }
+    }
+
+    &__slider-section {
+      display: none;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$LAPTOP_MIN_WIDTH})
+and (max-width: #{$LAPTOP_MAX_WIDTH})
+and (orientation: portrait) {
+  .Web-template-screen {
+    &__intro-text {
+      .Text-container {
+        h3,
+        h3 span {
+          font-size: $TITLE_LAPTOP_SIZE;
+          line-height: $TITLE_LAPTOP_HEIGHT;
+        }
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: portrait) {
+  .Web-template-screen {
+    flex-direction: column;
+
+    &__illustration {
+      width: auto;
+      height: 90%;
+    }
+
+    &__intro-text {
+      width: 100%;
+      height: 50vh;
+      .Text-container {
+        top: 55%;
+
+        h3,
+        h3 span {
+          font-size: $TITLE_TABLET_SIZE;
+          line-height: $TITLE_TABLET_HEIGHT;
+        }
+      }
+    }
+
+    &__slider-section {
+      width: 100%;
+    }
+
+    .Web-template-slider {
+      width: 80%;
+
+      &__slide-container {
+        width: 26% !important;
+      }
+    }
+  }
+}
+
+@media screen
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: landscape) {
+  .Web-template-screen {
+    &__slider-section {
+      .Web-template-slider {
+        &__slider-container {
+          width: 33% !important;
+        }
+      }
+    }
+  }
+}
+// width: 33% !important;

@@ -1,7 +1,7 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .Intro-screen {
-  height: calc(100vh - #{$HEADER_HEIGHT});
+  height: 100vh;
   position: relative;
   box-sizing: border-box;
 
@@ -9,9 +9,9 @@
     height: calc(100% - #{$VIDEO_HEIGHT});
     width: 100%;
     box-sizing: border-box;
-    padding: 50px 30px 30px $OFFSET;
+    padding: 80px 30px 30px $OFFSET;
     position: relative;
-    min-height: 460px;
+    min-height: 490px;
 
     & .Button-ellipse {
       position: absolute;
@@ -32,6 +32,78 @@
       left: 0;
       position: absolute;
       object-fit: cover;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Intro-screen {
+    height: auto;
+    max-width: 100vw;
+    box-sizing: border-box;
+    &__text-content {
+      height: auto;
+      padding: 80px $OFFSET_MOBILE;
+      min-height: auto;
+    }
+
+    .Numerical-categories {
+      display: none;
+    }
+    .Button-ellipse {
+      position: relative;
+      margin-top: 50px;
+      bottom: auto;
+      right: auto;
+    }
+
+    &__video-section {
+      height: $VIDEO_MOB_HEIGHT;
+      overflow: hidden;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Intro-screen {
+    &__text-content {
+      padding: 100px 30px 30px $OFFSET_TABLET;
+
+      .Numerical-categories {
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        top: 50px;
+        .Numerical-category {
+          margin: 0 0 0 60px;
+          &:nth-of-type(1) {
+            margin: 0;
+          }
+        }
+      }
+      .Button-ellipse {
+        right: auto;
+        left: $OFFSET_TABLET;
+      }
+    }
+  }
+}
+
+@media screen
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: landscape) {
+  .Intro-screen {
+    &__text-content {
+      .Button-ellipse {
+        left: auto;
+        right: 30px;
+        bottom: 40px;
+      }
     }
   }
 }

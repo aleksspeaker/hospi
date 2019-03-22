@@ -1,9 +1,9 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .Complete-service-screen {
   height: calc(100vh - #{$HEADER_HEIGHT});
   box-sizing: border-box;
-  padding: 50px 20px 30px 250px;
+  padding: 50px 20px 30px $OFFSET;
   overflow: hidden;
 
   &__illustration {
@@ -16,7 +16,7 @@
 
     img {
       position: absolute;
-      top: -30px;
+      top: 30px;
     }
   }
 
@@ -56,6 +56,9 @@
 
     .Control-bullet {
       margin-right: 90px;
+      &__text-content span {
+        font-size: 13px;
+      }
     }
   }
 
@@ -75,11 +78,106 @@
         flex-direction: column;
         width: calc(100% / 4);
         margin: 0;
+        & small {
+          margin-left: 0;
+        }
       }
     }
 
     .Button-ellipse:nth-of-type(2) {
       margin-left: 15px;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Complete-service-screen {
+    height: auto;
+    padding: $OFFSET_MOBILE;
+
+    &__intro-controls {
+      h3,
+      h3 span {
+        font-size: $TITLE_MOBILE_SIZE;
+        line-height: $TITLE_MOBILE_HEIGHT;
+      }
+    }
+
+    &__illustration {
+      display: none;
+    }
+
+    &__controls {
+      justify-content: space-between;
+      .Control-bullet {
+        margin: 0;
+      }
+    }
+
+    &__steps {
+      padding: 30px 0 0;
+
+      section {
+        padding: 0;
+
+        .Numerical-category {
+          flex-direction: row;
+          width: calc(100% / 2);
+          margin-top: 30px;
+
+          small {
+            box-sizing: border-box;
+            padding-right: 6px;
+            margin: 2px 8px 0 16px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .Button-ellipse {
+      margin-top: 20px;
+      box-sizing: border-box;
+
+      &:nth-of-type(1) {
+        margin-top: 50px;
+        width: 100%;
+      }
+      &:nth-of-type(2) {
+        margin-left: 0;
+        width: 170px;
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Complete-service-screen {
+    padding: 50px 20px 30px $OFFSET_TABLET;
+
+    &__illustration {
+      right: 5%;
+      bottom: -10%;
+      width: 320px;
+    }
+  }
+}
+
+@media screen
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: landscape) {
+  .Complete-service-screen {
+    &__illustration {
+      height: 100%;
+      bottom: auto;
+    }
+    &__controls {
+      padding: 10px 0 0;
     }
   }
 }

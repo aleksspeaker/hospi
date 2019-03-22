@@ -1,6 +1,6 @@
-
 import Head from 'next/head';
 import * as React from 'react';
+import { FooterBasic } from './FooterBasic/FooterBasic';
 import Header from './Header/Header';
 
 interface IProps {
@@ -16,10 +16,7 @@ const Layout: React.FunctionComponent<IProps> = ({ children, title = 'This is th
     </Head>
     <Header />
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+    <FooterBasic />
   </div>
 );
 

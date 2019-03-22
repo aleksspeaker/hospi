@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .Web-template-card {
   background-color: $CARDS_BG;
@@ -17,6 +17,8 @@
     border: 4px solid $TEMPLATE_BORDER_COLOR;
     width: calc(100% - 40px);
     bottom: 20px;
+    height: 250px;
+    object-fit: cover;
     box-sizing: border-box;
   }
 
@@ -33,5 +35,41 @@
     line-height: 22px;
     width: 50%;
     margin: 0;
+  }
+}
+
+@media screen
+and (min-width: #{$LAPTOP_MIN_WIDTH})
+and (max-width: #{$LAPTOP_MAX_WIDTH}) {
+  .Web-template-card {
+    padding: 25px;
+    width: 440px;
+    &__preview {
+      height: 230px;
+      width: calc(100% - (2 * 25px));
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Web-template-card {
+    width: 375px;
+    &__preview {
+      height: 200px;
+    }
+  }
+}
+
+@media screen
+and (max-width: #{$TABLET_MAX_WIDTH})
+and (orientation: landscape) {
+  .Web-template-card {
+    width: 325px;
+
+    &__preview {
+      height: 170px;
+    }
   }
 }

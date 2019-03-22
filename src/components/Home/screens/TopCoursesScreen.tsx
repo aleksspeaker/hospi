@@ -18,12 +18,13 @@ export class TopCoursesScreen extends Component {
             <p className="Text-container__intro">
               for the Hospitality Industries.
             </p>
-            <ButtonEllipse text={"all programs"} classes={"Button-ellipse_gray arrow-dark"}/>
-
+            <ButtonEllipse
+              text={"all programs"}
+              classes={"Button-ellipse_gray arrow-dark"}
+            />
           </div>
         </div>
         <TimerSlider />
-
       </section>
     );
   }

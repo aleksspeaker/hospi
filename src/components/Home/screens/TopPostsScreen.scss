@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .Top-posts-screen {
   height: calc(100vh - #{$HEADER_HEIGHT});
@@ -30,7 +30,7 @@
 
       small {
         color: white;
-        opacity: .6;
+        opacity: 0.6;
       }
 
       span {
@@ -138,5 +138,124 @@
       bottom: 0;
     }
   }
+}
 
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Top-posts-screen {
+    height: auto;
+
+    &__text-content {
+      height: auto;
+    }
+
+    .Text-container {
+      width: 100%;
+      padding: 0;
+
+      &__slider-label {
+        margin: 0;
+      }
+
+      .Posts-slider {
+        margin-top: 20px;
+        height: 240px;
+
+        h3 {
+          font-size: $TITLE_MOBILE_SIZE;
+          line-height: $TITLE_MOBILE_HEIGHT;
+        }
+      }
+    }
+
+    &__illustration {
+      display: none;
+    }
+
+    .Screen-footer {
+      height: auto;
+      flex-direction: column;
+      display: flex;
+      margin-top: 30px;
+      min-height: 140px;
+
+      &__open-hub,
+      &__open-posts {
+        height: 140px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      &__open-hub {
+        span {
+          font-size: 13px;
+          line-height: 20px;
+        }
+      }
+
+      &__open-posts {
+        p {
+          font-size: $TITLE_MOBILE_SIZE;
+          line-height: $TITLE_MOBILE_HEIGHT;
+        }
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$LAPTOP_MIN_WIDTH})
+and (max-width: #{$LAPTOP_MAX_WIDTH}) {
+  .Top-posts-screen {
+    .Text-container {
+      z-index: 1;
+    }
+
+    &__illustration {
+      left: -40px;
+      height: 95%;
+      z-index: 0;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$LAPTOP_MIN_WIDTH})
+and (max-width: #{$LAPTOP_MAX_WIDTH}) {
+  .Top-posts-screen {
+    .Text-container {
+      .Posts-slider {
+        h3,
+        h3 span {
+          font-size: $TITLE_LAPTOP_SIZE;
+          line-height: $TITLE_LAPTOP_HEIGHT;
+        }
+      }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Top-posts-screen {
+    .Text-container {
+      .Posts-slider {
+        height: 65%;
+
+        h3 {
+          font-size: $TITLE_TABLET_SIZE;
+          line-height: $TITLE_TABLET_HEIGHT;
+        }
+      }
+    }
+    & .Top-posts-screen__illustration {
+      height: 80%;
+      left: -50px;
+    }
+  }
 }

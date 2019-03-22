@@ -3,6 +3,7 @@
 .Text-container {
   font-size: 15px;
   font-weight: 500;
+
   &__title {
     font-size: $TITLE_FONT_SIZE;
     line-height: $TITLE_LINE_HEIGHT;
@@ -41,7 +42,6 @@
         width: 26px;
         height: 26px;
         float: left;
-        /* padding: 0px; */
         text-align: center;
         background: #e6e6e6;
         position: relative;
@@ -60,6 +60,35 @@
         position: relative;
         top: 4px;
       }
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$MOBILE_MIN_WIDTH})
+and (max-width: #{$MOBILE_MAX_WIDTH})
+and (orientation: portrait) {
+  .Text-container {
+    &__title {
+      font-size: $TITLE_MOBILE_SIZE;
+      line-height: $TITLE_MOBILE_HEIGHT;
+    }
+
+    &__intro {
+      margin: 20px 0;
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen
+and (min-width: #{$TABLET_MIN_WIDTH})
+and (max-width: #{$TABLET_MAX_WIDTH}) {
+  .Text-container {
+    &__title {
+      font-size: $TITLE_TABLET_SIZE;
+      line-height: $TITLE_TABLET_HEIGHT;
     }
   }
 }

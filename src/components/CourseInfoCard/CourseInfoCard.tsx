@@ -6,21 +6,35 @@ interface ICourseInfoCardProps {
   imageURL: string;
   courseName: string;
   complexityLevel: number;
-  classes: string[];
+  classes?: string[];
   price: number;
+  isActive: boolean;
 }
 
 class CourseInfoCard extends Component<ICourseInfoCardProps> {
 
   public render() {
-    const  {imageURL, courseName, complexityLevel, classes, price} = this.props;
+    const {
+      imageURL,
+      courseName,
+      complexityLevel,
+      price,
+      isActive,
+    } = this.props;
+
     return (
-      <article className={"Course-info-card " + classes}>
-        <img className="Course-info-card__illustration" src={imageURL} alt={courseName}/>
+      <article
+        className={isActive ? "Course-info-card_active" : "Course-info-card"}
+      >
+        <img
+          className="Course-info-card__illustration"
+          src={imageURL}
+          alt={courseName}
+        />
         <div className="Course-info-card__description">
           <small>{complexityLevel}</small>
           <h5>{courseName}</h5>
-          <span>{ "$" + String(price) }</span>
+          <span>{"$" + String(price)}</span>
         </div>
       </article>
     );

@@ -6,6 +6,8 @@ import { WebTemplateCard } from "../WebTemplateCard/WebTemplateSlide";
 
 import "./WebTemplateSlider.scss";
 
+interface ITemplateItem { templateName: any; templatePrice: any; templatePreview: any; }
+
 export const WebTemplateSlider = ({ responseObj }) => {
   let ReactSwipeElm;
 
@@ -18,11 +20,10 @@ export const WebTemplateSlider = ({ responseObj }) => {
         onNext={() => {
           ReactSwipeElm.next();
         }}
-        classes=""
       />
 
-      <ReactSwipe className={""} ref={(el: any) => (ReactSwipeElm = el)}>
-        {responseObj.map((templateItem: { templateName: any; templatePrice: any; templatePreview: any; }) => {
+      <ReactSwipe ref={(el: any) => (ReactSwipeElm = el)}>
+        {responseObj.map((templateItem: ITemplateItem) => {
           return (
             <span className={"Web-template-slider__slide-container"}>
               <WebTemplateCard
