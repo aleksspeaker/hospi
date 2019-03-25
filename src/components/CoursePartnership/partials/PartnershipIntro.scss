@@ -1,0 +1,16 @@
+@import "../../../styles/variables";
+
+.Partnership-intro {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $HEADER_HEIGHT 0 20px $OFFSET;
+  min-height: 300px;
+  text-align: center;
+
+  &__title {
+    font-size: $TITLE_FONT_SIZE;
+    line-height: $TITLE_LINE_HEIGHT;
+    font-weight: 500;
+    margin: 0;
+  }
+}

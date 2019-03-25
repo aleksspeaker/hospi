@@ -7,7 +7,7 @@ interface IProps {
   title?: string;
 }
 
-const Layout: React.FunctionComponent<IProps> = ({ children, title = 'This is the default title' }) => (
+const Layout: React.FunctionComponent<IProps> = ({ children, title = 'Cordie' }) => (
   <div className="header">
     <Head>
       <title>{title}</title>
