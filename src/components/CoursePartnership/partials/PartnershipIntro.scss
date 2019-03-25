@@ -1,0 +1,36 @@
+@import "../../../styles/variables";
+
+.Partnership-intro {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $HEADER_HEIGHT 0 20px $OFFSET;
+  min-height: 300px;
+  position: relative;
+  background: $BG_GRAY;
+
+  &__title {
+    text-align: center;
+    font-size: $TITLE_FONT_SIZE;
+    line-height: $TITLE_LINE_HEIGHT;
+    font-weight: 500;
+    margin: 0;
+    max-width: 300px;
+    @include centeredAbsolutely();
+  }
+
+  &__links {
+    position: absolute;
+    bottom: 20px;
+
+    .Button-ellipse:nth-of-type(2) {
+      margin-left: 15px;
+    }
+  }
+
+  &__illustration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 90%;
+  }
+}

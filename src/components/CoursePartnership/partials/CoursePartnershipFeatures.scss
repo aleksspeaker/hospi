@@ -1,0 +1,27 @@
+@import "../../../styles/variables";
+
+.Course-partnership-features {
+  box-sizing: border-box;
+  padding: 60px 20px 60px $OFFSET;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 1px solid $BORDER_COLOR;
+    padding-bottom: 50px;
+
+    .Feature-with-icon {
+      width: calc(100% / 4);
+      max-width: 200px;
+    }
+  }
+
+  &__outro {
+    font-size: $SMALL_FONT_SIZE;
+    line-height: $SMALL_LINE_HEIGHT;
+    color: $DARK_GRAY;
+    margin: 50px 0 50px 330px;
+    max-width: 180px;
+  }
+}

@@ -1,15 +1,15 @@
-import Link from 'next/link';
-import React, { Component } from 'react';
+import Link from "next/link";
+import React, { Component } from "react";
 
-import generateUniqueIndex from '../../helpers/generateUniqueIndex';
-import BurgerMenu from './BurgerMenu/BurgerMenu';
+import generateUniqueIndex from "../../helpers/generateUniqueIndex";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
-import login from '../../../static/images/login.svg';
-import logo from '../../../static/images/logo.svg';
-import burgerIcon from '../../../static/images/menu-burger-icon.svg';
-import liked from '../../../static/images/wishlist.svg';
+import login from "../../../static/images/login.svg";
+import logo from "../../../static/images/logo.svg";
+import burgerIcon from "../../../static/images/menu-burger-icon.svg";
+import liked from "../../../static/images/wishlist.svg";
 
-import './Header.scss';
+import "./Header.scss";
 
 interface IItem {
   id: string;
@@ -29,14 +29,19 @@ class Header extends Component<null, IHeaderState> {
     this.state = headerState;
   }
 
-  public toggleMenuState = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  public toggleMenuState = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     const { isOpen } = this.state;
     this.setState({
-      isOpen: !isOpen,
+      isOpen: !isOpen
     });
-  }
+  };
 
-  public handleMenuItemClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, data) => {
+  public handleMenuItemClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    data
+  ) => {
     const { isOpen } = this.state;
 
     e.preventDefault();
@@ -44,9 +49,9 @@ class Header extends Component<null, IHeaderState> {
 
     this.setState({
       activeOpenMenuItem: data.id,
-      isOpen: !isOpen,
+      isOpen: !isOpen
     });
-  }
+  };
 
   public render() {
     const { headerItems } = this.state;
@@ -82,7 +87,7 @@ class Header extends Component<null, IHeaderState> {
             <span>ALL PROGRAMS</span>
           </div>
           <div className="Program-User__favrts-profile Wishlist-login">
-          <button className="Wishlist-login__wishlist">
+            <button className="Wishlist-login__wishlist">
               <img src={liked} alt="liked" />
             </button>
             <button className="Wishlist-login__login">
@@ -104,80 +109,80 @@ const headerState = {
   headerItems: [
     {
       id: generateUniqueIndex(),
-      itemName: 'market',
-      slug: 'market',
+      itemName: "market",
+      slug: "market"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'media',
-      slug: 'media',
+      itemName: "media",
+      slug: "media"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'consulting',
-      slug: 'consulting',
+      itemName: "consulting",
+      slug: "consulting"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'for companies',
-      slug: 'for-companies',
-    },
+      itemName: "for companies",
+      slug: "for-companies"
+    }
   ],
   isOpen: false,
   openMenuItems: [
     {
       id: 0,
-      itemName: 'Home',
-      slug: '',
+      itemName: "Home",
+      slug: ""
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'Programs',
-      slug: 'programs',
+      itemName: "Programs",
+      slug: "programs"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'Media',
-      slug: 'media',
+      itemName: "Media",
+      slug: "media"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'Store',
-      slug: 'store',
-    },
+      itemName: "Store",
+      slug: "store"
+    }
   ],
   openMenuLowerItems: [
     {
       id: generateUniqueIndex(),
-      itemName: 'Consulting',
-      slug: 'consulting',
+      itemName: "Consulting",
+      slug: "consulting"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'For Companies',
-      slug: 'for-companies',
+      itemName: "For Companies",
+      slug: "for-companies"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'Contacts',
-      slug: 'contacts',
+      itemName: "Contacts",
+      slug: "contacts"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'Jobs',
-      slug: 'jobs',
+      itemName: "Jobs",
+      slug: "jobs"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'Partnerships',
-      slug: 'partnerships',
+      itemName: "Partnerships",
+      slug: "course-partnership"
     },
     {
       id: generateUniqueIndex(),
-      itemName: 'Our Story',
-      slug: 'our-story',
-    },
-  ],
+      itemName: "Our Story",
+      slug: "our-story"
+    }
+  ]
 };
 
 export default Header;

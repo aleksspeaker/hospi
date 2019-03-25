@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+
+.Feature-with-icon {
+  display: flex;
+  flex-direction: column;
+
+  &__icon {
+    height: 50px;
+    width: 48px;
+  }
+
+  &__title {
+    margin: 25px 0 0 0;
+    font-weight: 500;
+    font-size: $SUBTITLE_FONT_SIZE;
+    line-height: $SUBTITLE_LINE_HEIGHT;
+  }
+
+  &__paragraph {
+    margin: 20px 0 0;
+    color: $DARK_GRAY;
+    font-size: $SMALL_FONT_SIZE;
+    line-height: $SMALL_LINE_HEIGHT;
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../../styles/variables";
+
+.Course-partner-description {
+  padding: 60px 20px 50px $OFFSET;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  &-upper {
+    box-sizing: border-box;
+    display: flex;
+    border-bottom: 1px solid $BORDER_COLOR;
+    padding-bottom: 50px;
+
+    &__title {
+      font-size: $SUBTITLE_FONT_SIZE;
+      line-height: $SUBTITLE_LINE_HEIGHT;
+      font-weight: 500;
+      margin: 0;
+      max-width: 230px;
+    }
+  }
+
+  &-lower,
+  &-upper {
+    &__intro {
+      font-size: $SMALL_FONT_SIZE;
+      line-height: $SMALL_LINE_HEIGHT;
+      color: $DARK_GRAY;
+      max-width: 180px;
+      margin: 0 0 0 100px;
+    }
+  }
+
+  &-lower {
+    &__intro {
+      max-width: 270px;
+      margin: 50px 0 0 330px;
+    }
+  }
+}
