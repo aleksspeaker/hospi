@@ -3,7 +3,7 @@ import React from "react";
 
 import "./BurgerMenu.scss";
 
-interface IItem {
+interface IIteim {
   id: string;
   itemName: string;
   slug: string;
